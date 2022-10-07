@@ -1,0 +1,32 @@
+
+.circle{
+    position:relative;
+    left:200px;
+    top:200px;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-color: pink;
+
+    
+    animation : move 3s 6;
+}
+
+@keyframes move{
+    0%,100%{
+        top:200px;
+        left:200px;
+    }
+    25%{
+        top:200px;
+        left:400px;
+    }
+    50%{
+        top:400px;
+        left:400px;
+    }
+    75%{
+        top:400px;
+        left:200px;
+    }
+}

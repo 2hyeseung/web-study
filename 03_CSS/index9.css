@@ -1,0 +1,42 @@
+.d-inline1{
+    display:inline;
+    background-color: red;
+}
+.d-inline2{
+    display:inline;
+    background-color: pink;
+}
+.d-block1{
+    display: block;
+    background-color: red;
+    width:1200px;
+    height:200px;
+    padding : 10px 30px;
+}
+.d-block2{
+    display: block;
+    background-color: blue;
+    color:white;
+}
+.d-inline-block1{
+    display:inline-block;
+    background-color: red;
+
+    width:200px;
+    height:200px;
+    margin:10px;
+}
+.d-inline-block2{
+    display:inline-block;
+    background-color: blue;
+    color:white;
+    /* width:200px;
+    height:200px;
+    margin:10px; */
+}
+.d-none{
+    /* display: none; */
+    width:100px;
+    height:100px;
+    background-color: green;
+}

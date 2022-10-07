@@ -1,0 +1,165 @@
+/* 
+    단일선택자
+    - 전체 : *{}
+    - 태그 : 태그명{}
+    - 클래스 : .{}
+    - 아이디 : #아이디명{}
+*/
+
+/* *{
+    color:blue
+}
+
+li{
+    color:greenyellow
+}
+
+.orange{
+    color:orange
+}
+
+div.orange{
+    color:rgb(162, 160, 160)
+}
+
+#orange{
+    color:hotpink
+} */
+
+/*  여러 선택자를 동시에 지정
+    - , 를 이용해 여러 선택지에 동시 선택
+ */
+/* 
+ ul, p, .orange{
+     color:black;
+ } */
+
+ /* 
+    복합 형제 선택자
+    - 하위 : A B
+    - 자식 : A > B
+    - 인접형제 : A + B
+    - 일반형제 : A ~ B
+ */
+
+
+ /* 하위 선택자 */
+body .orange{
+    color:orange;
+}
+
+
+/* 자식 선택자 */
+ul > .orange{
+    color:red;
+}
+
+
+/* 
+    인접형제 선택자 
+    A + B
+    조건1. A, B 같은레벨
+    조건2. B가 A의 바로 뒤
+*/
+ul + .orange{
+    color:green;
+}
+ul + span.orange{
+    color:green;
+    /* 바로 뒤가 아니므로 적용X */
+}
+
+
+/* 
+    일반형제 선택자 
+    A ~ B
+    조건1. A, B 같은레벨
+    조건2. B는 A의 뒤에 위치 (바로 뒤 아니어도 됨)
+*/
+div.orange ~ span{
+    color : royalblue
+}
+
+div.orange ~ ul{
+    color:royalblue
+    /* ul이 앞에 있으므로 적용 X */
+}
+
+
+/* 
+    가상 선택자 
+    - E:hover : 요소에 마우스가 올라가 있는 동안
+    - E:active : 클릭하는동안
+    - E:visited : 방문 이력이 있을 때, 요소가 링크여야함
+*/
+
+
+#google:hover{
+    font-weight:700;
+    color:red;
+}
+#naver:active{
+    font-weight:700;
+    color:blueviolet;
+}
+#daum:visited{
+    color:gray;
+}
+
+.fruits span:first-child{
+    color:red;
+}
+
+/* p태그가 fruits의 첫번째 자식이 아니므로 적용X */
+.fruits p:first-child{
+    color:red;
+}
+
+.fruits h3:last-child{
+    color:red;
+}
+
+/* 괄호 안에 공식을 이용해서 여러개를 선택 가능 */
+.fruits *:nth-child(2n){
+    color:green;
+}
+
+.fruits *:not(span){
+    color:yellow;
+}
+
+/* .numbers span:nth-child(odd){
+    color:orange;
+}
+
+.numbers span:nth-child(even){
+    color:green;
+} */
+
+.numbers span:nth-child(3n+4){
+    color:blue;
+}
+
+
+/* CSS 우선순위 */
+.test{
+    font-size:24px;
+    font-weight:700;
+}
+/* 전체 선택자 */
+.test *{
+    color:gray;    
+}
+/* 태그 선택자 */
+.test span{
+    color:blue !important;
+    /* important가 다 이김 */
+}
+/* 클래스 선택자 (클래스>태그) */
+.test .num{
+    color:green;
+}
+/* id 선택지 id>클래스 */
+.test #two{
+    color:purple;
+}

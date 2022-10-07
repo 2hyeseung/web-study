@@ -1,0 +1,78 @@
+body{
+    margin:0;
+    padding:0;
+    height:2000px;
+}
+
+div{
+    width:100px;
+    height:100px;
+    border-style:none;
+    border-radius: 50px;
+}
+
+.grass{
+    width: 300px;
+    height: 200px;
+    position:absolute;
+    top: 300px;
+    left: 40px;
+}
+
+.one{
+    background-color: lightpink;
+    position:fixed;
+    top:100px;
+    left: 100px;
+}
+
+.two{
+    background-color: rgb(199, 118, 130);
+    position:fixed;
+    top:160px;
+    left: 160px;
+}
+
+.three{
+    background-color: rgb(225, 93, 113);
+    position:fixed;
+    top:180px;
+    left: 230px;
+}
+
+.four{
+    background-color: rgb(176, 14, 38);
+    position:fixed;
+    top:220px;
+    left: 300px;
+}
+
+.five{
+    background-color: rgb(112, 5, 22);
+    position:fixed;
+    top:270px;
+    left: 350px;
+}
+
+.six{
+    width:30px;
+    height:30px;
+    border-style:none;
+    border-radius: 50px;
+    background-color: white;
+    position:fixed;
+    top:120px;
+    left: 120px;
+}
+
+.seven{
+    width:15px;
+    height:15px;
+    border-style:none;
+    border-radius: 50px;
+    background-color: black;
+    position:fixed;
+    top:130px;
+    left: 120px;
+}
+

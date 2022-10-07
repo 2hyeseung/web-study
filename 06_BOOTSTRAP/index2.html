@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <style>
+        body{
+            margin-bottom: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bootstrap Utilities</h1>
+
+    <!-- background -->
+    <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+    <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+    <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+    <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+    <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+    <div class="p-3 mb-2 bg-info text-dark">.bg-info</div>
+    <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+    <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+    <div class="p-3 mb-2 bg-body text-dark">.bg-body</div>
+    <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+    <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+
+    <!-- border -->
+    <span class="border border-primary border-top-0">Hello</span>
+    <span class="border border-secondary border-bottom-0">Hello</span>
+    <span class="border border-success">Hello</span>
+    <span class="border border-danger">Hello</span>
+    <span class="border border-warning">Hello</span>
+    <span class="border border-info">Hello</span>
+    <span class="border border-light">Hello</span>
+    <span class="border border-dark">Hello</span>
+    <span class="border border-white">Hello</span>
+    <div class="mb-4">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control border-success" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+
+    <div class="h4 pb-2 mb-4 text-danger border-bottom border-danger">
+        Dangerous heading
+    </div>
+    <div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+        Changing border color and width
+    </div>
+    
+    <!-- color -->
+    <p class="text-primary">.text-primary</p>
+    <p class="text-secondary">.text-secondary</p>
+    <p class="text-success">.text-success</p>
+    <p class="text-danger">.text-danger</p>
+    <p class="text-warning bg-dark">.text-warning</p>
+    <p class="text-bg-warning">.text-warning</p>
+    <p class="text-bg-primary">.text-warning</p>
+    <p class="text-info bg-dark">.text-info</p>
+    <p class="text-light bg-dark">.text-light</p>
+    <p class="text-dark">.text-dark</p>
+    <p class="text-body">.text-body</p>
+    <p class="text-muted">.text-muted</p>
+    <p class="text-white bg-dark">.text-white</p>
+    <p class="text-black-50">.text-black-50</p>
+    <p class="text-white-50 bg-dark">.text-white-50</p><hr>
+
+    <!-- spacing (margin, padding) -->
+    <div class="m-2 text-bg-danger text-center">box1</div>
+    <div class="py-3 m-2 text-bg-primary text-center">box2</div><hr>
+
+    <!-- display : inline    // 컨텐츠만큼 너비 차지, 줄바꿈 X -->
+    <div class="d-inline p-2 text-bg-primary">d-inline</div>
+    <div class="d-inline p-2 text-bg-dark">d-inline</div><br><br>
+    <!-- display block      // 전체 너비 차지, 줄바꿈-->
+    <!-- w-(size) :     width : size(0, 25, 50, 75 100) -->
+    <!-- h-(size) :     height : size(0, 25, 50, 75 100) -->
+    <span class="d-block p-2 text-bg-primary w-50">d-block</span>
+    <span class="d-block p-2 text-bg-dark w-25">d-block</span>
+    <!-- display : none     // 화면에서 사라지게 됨 -->
+    <span class="d-none p-2 text-bg-dark w-25">d-none</span>
+
+    코딩온_Sean
+    오전 11:18
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bootstrap Demo</title>
+  
+      <!-- CDN Link (css) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css
+      ">
+  
+      <style>
+          body {
+              padding-bottom: 1000px;
+          }
+      </style>
+  </head>
+  <body>
+      <h1>Bootstrap Utilities</h1>
+  
+      <!-- background color -->
+      <!-- p-3: padding 3 -->
+      <!-- mb-3: margin-bottom 3 -->
+      <!-- text-white: color white -->
+      <div class="p-0 mb-2 bg-primary text-white">.bg-primary</div>
+      <div class="p-1 mb-2 bg-secondary text-white">.bg-secondary</div>
+      <div class="p-2 mb-2 bg-success text-white">.bg-success</div>
+      <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+      <div class="p-4 mb-2 bg-warning text-dark">.bg-warning</div>
+      <div class="p-5 mb-2 bg-info text-dark">.bg-info</div>
+      <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+      <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+      <div class="p-3 mb-2 bg-body text-dark">.bg-body</div>
+      <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+      <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+      
+      <!-- border -->
+      <span class="p-3 border border-primary border-top-0">Hello</span>
+      <span class="border border-secondary border-bottom-0">Hello</span>
+      <span class="border-bottom border-success">Hello</span>
+      <span class="border border-danger">Hello</span>
+      <span class="border border-warning">Hello</span>
+      <span class="border border-info">Hello</span>
+      <span class="border border-light">Hello</span>
+      <span class="border border-dark">Hello</span>
+      <span class="border border-white">Hello</span>
+      <br><br>
+      <div class="mb-4">
+          <label for="my-input" class="form-label">Email address</label>
+          <input type="email" class="form-control border-danger" id="my-input" placeholder="name@example.com">
+      </div>
+  
+      <!-- color -->
+      <p class="text-primary">.text-primary</p>
+      <p class="text-secondary">.text-secondary</p>
+      <p class="text-success">.text-success</p>
+      <p class="text-danger">.text-danger</p>
+      <p class="text-warning bg-dark">.text-warning</p>
+      <p class="text-bg-warning">.text-warning</p>
+      <p class="text-bg-primary">.text-warning</p>
+      <p class="text-info bg-dark">.text-info</p>
+      <p class="text-light bg-dark">.text-light</p>
+      <p class="text-dark">.text-dark</p>
+      <p class="text-body">.text-body</p>
+      <p class="text-muted">.text-muted</p>
+      <p class="text-white bg-dark">.text-white</p>
+      <p class="text-black-50">.text-black-50</p>
+      <p class="text-white-50 bg-dark">.text-white-50</p>
+  
+  
+      <!-- spacing (margin, padding) -->
+      <hr>
+      <div class="mb-5 text-bg-danger text-center">box1</div>
+      <div class="ms-3 text-bg-primary text-center">box2</div>
+      <br>
+      <br>
+  
+      <!-- display: inline
+          컨텐츠만큼 너비 차지, 줄바꿈 x
+      -->
+      <div class="d-inline p-2 text-bg-primary">d-inline</div>
+      <div class="d-inline p-2 text-bg-dark">d-inline</div>
+      <br>
+      <br>
+  
+      <!-- display: block 
+          전체 너비 차지, 줄바꿈 	
+      -->
+      <!-- w-{size}: width: size(0, 25, 50, 75, 700);  -->
+      <!-- h-{size}: height: size(0, 25, 50, 75, 700);  -->
+      <span class="d-block p-2 text-bg-primary w-50">d-block</span>
+      <span class="d-block p-2 text-bg-dark w-25">d-block</span>
+      <br>
+  
+      <!-- display: inline-block -->
+      <span class="d-inline-block p-2 text-bg-primary w-50">d-block</span>
+      <span class="d-inline-block p-2 text-bg-dark w-25">d-block</span>
+      
+      <!-- display: none; 
+          화면에서 사라지게 함
+      -->
+      <span class="d-none p-2 text-bg-dark w-25">d-none1</span>
+      <span class="p-2 text-bg-dark w-25">d-none2</span>
+      <br>
+      <br>
+      <br>
+    <!-- display : flex -->
+    <!-- 부모 요소에 flex -> 자식 요소 inline block -->
+	<!-- justify-content-center -> justify-content: center; -->
+	<!-- align-items-center -> align-items: center; -->
+	<div class="parent border border-info d-flex justify-content-center align-items-center" style="height: 300px;">
+		<div class="child text-bg-danger" style="width: 100px; height: 100px;">child</div>
+		<div class="child text-bg-primary" style="width: 100px; height: 100px;">child</div>
+		<div class="child text-bg-warning" style="width: 100px; height: 100px;">child</div>
+	</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

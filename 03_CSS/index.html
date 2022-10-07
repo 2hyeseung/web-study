@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 참조방식</title>
+
+    <!-- css 참조방식 1. 외부 스타일 시트 -->
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Jua&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+
+    <!-- css 참조방식 2. 내부 스타일 시트 -->
+    <style>
+        ul{
+            background-color:rgb(184, 165, 141);
+        }
+    </style>
+    
+    <!-- css 참조방식 3. HTML 태그 내의 스타일 지정 (h1) --> 
+
+ 
+
+</head>
+
+
+<body>
+
+    <!-- <h1 style="color: skyblue; text-align: center;">CSS 사용법을 익혀보자</h1> -->
+    <h1 class="title">CSS 사용법을 익혀보자</h1>
+    <ul>
+        <li>one! 외부 스타일 시트</li>
+        <li>two! 내부 스타일 시트</li>
+        <li>three! 태그 내의 스타일 지정</li>
+    </ul>
+
+    <!-- 3가지 방법중 가장 좋은 방법은? -->
+    <!--
+        1. 외부 스타일 시트 
+            - html은 구조만, css는 디자인만
+            - 자주 사용되는 디자인 -> 미리 파일에 링크 걸기 가능
+            - 효율성
+        2. 내부 스타일 시트
+            - 해당 html에만 적용 가능
+            - 똑같은 스타일이 있으면 다른 html 파일에 또 작성해야함
+            - 유지 보수성 낮음
+        3. HTML 태그 내의 스타일 지정 :
+            - 직관적, 수정빠름, 간편
+            - 권장 X
+            - html은 구조를 css는 디자인을 해야함
+    -->
+    <br>
+    <h1 class="title">CSS 참조방식 우선순위</h1>
+    <div class="center">
+    <p>
+        낮에도 <span>밝</span>지 않은 나의 <span>밤</span><br>
+        끝없는 <span>밤</span> 남겨진 <span>반</span>
+    </p>
+    </div>
+    <br>
+    <h1 class="title">CSS 많이 쓰이는 속성</h1>
+    <div class="gradient">Hello, World!</div>
+
+
+</body>
+
+
+</html>

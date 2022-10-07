@@ -1,0 +1,51 @@
+div{
+    width : 100px;
+    height : 100px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 100px;
+}
+
+.position-absolute{
+    position:absolute;
+}
+
+/* 
+    z-index
+    - 레이어 효과 : 겹겹에 쌓이게 만드는 속성
+    - 숫자 지정 -> 숫자가 클수록 위로 배치 (z축 기준)
+    - 양수, 음수 모두 가능
+    - auto 기본값
+*/
+
+
+.div1{
+    top:100px;
+    left:100px;
+    background-color: red;
+    z-index:8;
+}
+.div2{
+    top:140px;
+    left:140px;
+    background-color: orange;
+    z-index:7;
+}
+.div3{
+    top:180px;
+    left:180px;
+    background-color: yellow;
+    z-index: 16;
+}
+.div4{
+    top:220px;
+    left:220px;
+    background-color: green;
+    z-index: 5;
+}
+.div5{
+    top:260px;
+    left:260px;
+    background-color: blue;
+    z-index:4;
+}

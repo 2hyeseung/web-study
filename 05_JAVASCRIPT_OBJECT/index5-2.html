@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS DOM 이벤트</title>
+	<style>
+		button {
+			width: 100px;
+			height: 50px;
+			font-weight: 700;
+		}
+        span{
+            padding:10px;
+            border-style: double;
+            border-color: red;
+            border-width: 1px;
+        }
+	</style>
+</head>
+<body>
+	<h1 class="title">JS DOM 이벤트</h1>
+
+	<h2>이벤트 리스너 등록 방법</h2>
+
+	<!-- 1) 인라인 방식 -->
+	<!-- <button onclick="alert('버튼1 클릭!');">버튼1</button> -->
+	<button onclick="showAlert('버튼 1');">버튼1</button>
+	<!-- 2) 속성(프로퍼티) 방식 -->
+	<button id="btn2">버튼2</button>
+	<!-- 3) addEventListener() 메소드 방식 -->
+	<button id="btn3">버튼3</button>
+    <br>
+    <br>
+    <br>
+    <!-- 이벤트 등록 연습 -->
+    <span id="span1" ondblclick="dblclickSpan1();">SPAN1</span>
+    <span id="span2">SPAN2</span>
+    <span id="span3">SPAN3</span>
+
+	<script src="./index5-2.js"></script>
+</body>
+</html>

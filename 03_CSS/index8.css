@@ -1,0 +1,58 @@
+.beach1{
+    width: 400px;
+    height: 200px;
+    background-color:orange;
+
+    position:absolute;
+    top: 200px;
+    left: 150px;
+}
+
+img{
+    width:100%;
+    height:100%;
+}
+
+img:hover{
+    /* 
+        transition
+        css 프로미터(속성)이 변화할 때
+        일정시간동안 변화가 일어나도록
+    */
+    transition: transform 2s;
+
+
+    /* 
+        transform
+        - skew()
+    */
+    /* transform: skewX(30deg); */
+    /* transform: skewY(30deg); */
+    /* transform: skew(30deg,30deg); */
+
+
+    /* 
+        scale(): 크기 조절 (확대, 축소를 의미) 
+        - x > 1 : 확대
+        - 0 ~ 1 : 축소
+    */
+    /* transform: scaleX(2); */
+    /* transform: scaleY(2); */
+
+
+    /* rotate : 각도만큼 회전 */
+    /* transform: rotateX(45deg); */
+    /* transform: rotate(45deg); */
+
+
+    /* translate() : 이동 */
+    /* 
+        - translateX() : x축을 기준으로 이동
+        - translateY() : y축을 기준으로 이동
+        - translate() : x,y 축을 기준으로 이동
+    */
+    /* transform: translateX(-100px); */
+    /* transform: translateY(100px); */
+    transform: translate(100px,100px);
+
+}

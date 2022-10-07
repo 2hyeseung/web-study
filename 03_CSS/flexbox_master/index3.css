@@ -1,0 +1,125 @@
+/* common */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 15% auto;  /* 가운데 정렬 */
+    height: 100vh;
+    background-color: #333;
+    /* 
+        vh? 처음 보는 단위가 등장했습니다!
+        - vh: viewport height의 약자로 브라우저 1vh는 브라우저 뷰포트 높이의 1/100을 의미해요.
+        - 즉, 100vh는 브라우저 뷰포트 높이와 같아요. body 태그의 높이를 브라우저 뷰포트의 높이와 같게 설정했어요!
+        - 반응형 웹에 대해 학습하실 때 배우게 될 단위입니다 :)
+    */
+}
+
+img{
+    width:350px;
+    height:250px;
+    border-style: double;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.card-list{
+    background-color: #333;
+    margin: 0 auto;  /* 가운데 정렬 */
+    display: flex;
+    justify-content: space-around;
+}
+
+.card{
+    background-color: white;
+    text-align: center;
+    width:400px;
+    height:500px;
+    text-align:center;
+    border-style:none;
+    border-radius: 20px;
+    margin:20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:10px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+h1, p {
+    margin: 0;
+}
+
+p {
+    text-align: justify;
+}
+
+#kiwoom{
+    display: flex;
+    flex-direction: column;
+}
+#lotte{
+    display: flex;
+    flex-direction: column-reverse;
+}
+#lg{
+    display: flex;
+    flex-direction: column;
+}
+#hanwha{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#kiwoom:hover .title{
+    color:blue;
+    font-style: italic;
+}
+#lotte:hover .title{
+    color:red;
+    font-style: italic;
+}
+#lg:hover .title{
+    color:green;
+    font-style: italic;
+}
+#hanwha:hover .title{
+    color:pink;
+    font-style: italic;
+}
+
+#kiwoom:hover{
+    box-shadow : 10px 10px 10px rgb(203, 200, 200);
+    transition: transform 1s;
+    transform: translate(0px, -30px);
+}
+#lotte:hover{
+    box-shadow : 10px 10px 10px rgb(203, 200, 200);
+    transition: transform 1s;
+    transform: translate(0px, -30px);
+}
+#lg:hover{
+    box-shadow : 10px 10px 10px rgb(203, 200, 200);
+    transition: transform 1s;
+    transform: translate(0px, -30px);
+}
+#hanwha:hover{
+    box-shadow : 10px 10px 10px rgb(203, 200, 200);
+    transition: transform 1s;
+    transform: translate(0px, -30px);
+}
+
+
+.title{
+    font-weight:1000;
+}
+.caption{
+    padding:20px
+}
+
+
+/* TODO: Slack에서 실행영상을 참고해 제작해주세요~ */

@@ -1,0 +1,80 @@
+body{
+    margin:0;
+    padding:0;
+    height:2000px;
+}
+
+div{
+    width:100px;
+    height:100px;
+    font-weight: 700;
+    /* 수평 중앙 */
+    text-align: center;
+    /* 수직 중앙 */
+    line-height: 100px; 
+}
+
+/* 
+    position static (기본값)
+    - 기본값
+    - inline; 왼쪽->오른쪽 쌓임
+    - block; 위->아래 쌓임
+
+*/
+.position-static{
+    background-color: lightpink;
+}
+
+/* 
+    position relative ()
+    - 자신이 원래 있어야하는 위치 기준
+    - top : 위로부터의 여백 값
+    - bottom : 아래로부터의 여백 값
+    - right : 오늘쪽으로부터의 여백
+    - left : 왼쪽으로부터의 여백
+*/
+.position-relative{
+    background-color: aqua;
+    position:relative;
+    /* top:100px; */
+    /* bottom: 100px; */
+    /* right: 100px; */
+    /* left : 100px; */
+
+}
+
+/* 
+    position absolute (절대위치)
+    누구를 기준?
+    - relative 값을 갖는 가장 가까운 조상이 있다면, 해당 요소 기준
+    - relative 값을 갖는 조상이 없다면, body 태그 기준
+    - 처음으로부터 top, bottom, right,left 중에 하나 이상 지정
+*/
+.position-absolute{
+    background-color: yellow;
+    position: absolute;
+    /* 1) body 태그 기준 (조상 요소중에 position:relative 없는 경우 */
+    /* top:0; */
+    bottom:0;
+    /* right:0; */
+    /* left:0; */
+
+    /* 2) 조상 요소중에 position: relative 있는 경우 */
+    /* top:0px */
+    /* bottom: 50px; */
+    /* right:-50px; */
+    /* left:-50px; */
+}
+
+    /* 
+    position fixed
+    - viewport를 기준으로 
+    
+    */
+.position-fixed{
+    background-color: darkseagreen;
+    position:fixed;
+    /* top:440px; */
+    top:0;
+    bottom:0;
+}

@@ -1,0 +1,145 @@
+/* 
+    transition vs. animation
+    - transition : 변화될 "스타일"을 지정
+    - hover, onClick 이벤트에 의해 발생
+
+    - animation : 중간 중간 단계를 지정해 "세밀한 스타일 전환" 가능
+    - 하나 이상의 @keyframes로 이루어짐
+*/
+
+/* 
+    animation property
+    - animation-name : @keyframes에 지정한 애니메이션 이름
+        시작 : from or 0%
+        중간 : 0 ~ 100% 사이의 값
+        끝 : to or 100%
+    - animation-duration : 애니메이션 한 사이클이 얼마동안 일어날 것인지 (단위 : s, ms)
+    - animation-delay : 요소가 그려지고 난 후, 언제 애니메이션을 시작할지 (단위 : s, ms)
+    - animation-iteration-count : 애니메이션 반복 횟수 (default : 1)
+        정수로 숫자 지정 or infinite
+    - animation-timing-function : 중간중간 어떤 시간으로 상태를 변화시킬지
+        linear, ease(default), ease-in, ease-out, ease-in-out
+    - animation-direction : 애니메이션이 끝나고 난 후, 반복될 때 진행될 방향 지정
+        normal, reverse, alternate, alternate-reverse
+*/
+
+.box{
+    width:100px;
+    height:100px;
+    background-color: rgb(85, 188, 188);
+    position:relative;
+
+    /* animation 연결 */
+    animation-name:moveX;
+    animation-duration: 2s;
+    animation-iteration-count: 5;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+
+}
+
+@keyframes moveX{
+    0%{
+        left:0px;
+    }    
+    25%{
+        left:200px;
+    }
+    50%{
+        left:400px;
+    }
+    75%{
+        left:200px;
+    }
+    100%{
+        left:0px;
+    }
+}
+
+
+.bounce_ball1{
+    position:relative;
+    left:100px;
+    top:0;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-color: #0f0;
+
+    /* animation 연결 */
+    /* animation-name:bounce1; */
+    /* animation-duration: 1s; */
+    /* animation-iteration-count: infinite; */
+    /* animation-timing-function: ease-out; */
+    /* alternate : 홀수번째 정방향, 짝수번쨰 역방향 */
+    /* animation-direction: alternate; */
+
+    /* 
+    animation 축약형
+    animation : name / duration / timing-funtion / delay / iteration-count / direction
+    */
+    animation : bounce1 1s ease-out infinite alternate
+}
+
+@keyframes bounce1 {
+    /* 시작 */
+    from{
+        top:300px;
+    }
+    /* 끝 */
+    to{
+        top:50px;
+    }
+}
+
+
+.bounce_ball2{
+    width: 50px;
+    height: 50px;
+    background:tomato;
+    border-radius: 50%;
+
+    position:fixed;
+    left:30px;
+    bottom:0;
+
+    animation : bounce2 0.6s ease-out infinite alternate;
+}
+
+@keyframes bounce2 {
+    /* 시작 */
+    from{
+        bottom:0;
+    }
+    /* 끝 */
+    to{
+        bottom:300px;
+    }
+}
+
+.bounce_ball3{
+    width: 80px;
+    height: 80px;
+    background:pink;
+    border-radius: 50%;
+
+    position:fixed;
+    left:100px;
+    bottom:0;
+
+    animation : bounce3 1.2s ease-out 0.4s infinite alternate;
+}
+
+@keyframes bounce3{
+    from, to{
+        bottom: 0px;
+        /* 정상속도 -> 천천히 속도 줄임 */
+        animation-timing-function: ease-out;
+    }
+    50%{
+        bottom: 200px;
+        /* 천천히 시작 -> 정상 속도 */
+        animation-timing-function: ease-in;
+    }
+}
+

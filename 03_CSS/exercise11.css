@@ -1,0 +1,18 @@
+
+p{
+    position:fixed;
+    font-size: 25px;
+    animation : move 3s;
+
+}
+
+@keyframes move{
+    from{
+        left:100%;
+        width:250%;
+    }
+    to{
+        left:0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,100 @@
+
+body{
+    font-family: 'Quicksand', sans-serif; 
+}
+
+
+p{
+    color: darkviolet;
+    background-color: rgb(247, 228, 247);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    width:400px;
+    border-style:dashed;
+    border-width:3px;
+    border-color:rgb(59, 73, 78);
+    border-radius: 5px 40px;
+    box-shadow : 10px 10px 10px rgb(0, 0, 0, 0.4);
+    text-shadow : 0px 0px 1px black;
+    /* border 단축
+        border: width, style, color 한번에 설정 가능 */
+    /* border 한쪽만 border-left, border-right 
+        예시
+        border-top:10px solid green;
+    */
+}
+/* 원 : width height 길이 같게 하고 r을 50으로 함 */
+
+span{
+    color:forestgreen;
+}
+
+li{
+    font-size:30px;
+    padding: 10px;
+    color:white;
+    font-family: 'Bungee Spice','Gowun Batang';
+    padding-left:70px;
+}
+
+.title{
+    color:rgb(59, 73, 78);
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Jua', sans-serif;
+    font-size:50px;
+}
+
+.gradient{
+    color:white;
+    font-size: 40px;
+    background: linear-gradient(to right,gainsboro,blue);
+    text-decoration-line: underline;
+    padding:10px;
+    font-family: 'Times New Roman';
+    font-style: italic;
+    text-align: right;
+    border-style: double;
+    border-width: 10px;
+    border-left: black;
+    border-right: black;
+    /* 폰트 여러개 설정시 순서대로 되는거 적용함 */
+    /* 영어,한글 글꼴 다르게 -> 영어만 되는거 먼저하고 한글 폰트 */
+    /*  웹 폰트 : 모든 사용자가 동일한 폰트로 화면을 볼 수 있음  */
+    /* Google Font */
+    box-sizing : content-box;
+    margin:20px;
+}
+
+.center{
+    display: flex;
+    justify-content:center; 
+    align-items : center;
+};
+
+    /* 박스 모델 
+    요소의 너비의 높이를 계산하는 방식 지정
+    content -> padding -> border -> margin
+    box-sizing : content-box
+    */
+    /* box-sizing: content-box; */
+    /* margin, padding
+    padding : content의 border 사이의 공간
+    margin : border 바깥 공간
+    */
+    /* padding:10px;
+    margin:20px;  */
+
+
+    /* margin-top:50px;
+    margin-bottom:50px;
+    margin-right:50px;
+    margin-left:50px; */
+
+    /* 
+    box shadow : xoffset, yoffset, blur, color
+    box-shadow : 10px 10px 10px rgb(0, 0, 0, 0.4);
+    text-shadow : 1px 1px 2px blue;
+    */

@@ -1,0 +1,80 @@
+<html lang="ko">
+    <head>
+        <title>09/19 HTML 태그</title>
+    </head>
+    <body>
+        
+        html 문서 내용
+        <!-- 주석 커맨드 ctrl+/ -->
+
+        <!-- h1~h6 제목 크기 -->
+        <h1>제목</h1>
+        <h2>제목</h2>
+        <h3>제목</h3>
+        <h4>제목</h4>
+        <h5>제목</h5>
+        <h6>제목</h6>
+
+        <!-- p 하나의 문단을 표시하고 싶을 떄 -->
+        <p>첫 문단</p>
+        <p>두번째 문단</p>
+
+        <!-- img 이미지를 표시하고 싶을 때 -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/420px-Golde33443.jpg" width="200" height="200">
+        <img src="./image/puppy.jpg" width="200" height="200">
+        <img src="C:\Users\MIN\Documents\kdt\02_HTML\image\puppy.jpg" width="200" height="200">
+        <img src="./image/puppy2.jpg" width="200" height="200" alt="강아지">
+        <img src="./image/puppy.jpg" width="200" height="200" title="설명">
+
+        <!-- a  -->
+        <!-- href 속성 : 주소 -->
+        <br>
+        <a href="">a 태그입니다</a>
+        <br>
+        <a href="https://www.naver.com/">NAVER</a>
+        <a href="https://www.google.com/">GOOGLE</a>
+        <a href="https://www.daum.net/" target="_blank">DAUM</a>
+        <hr>
+
+        <!-- div : division 가상의 레이아웃 -->
+        <div>div1</div>
+        <div>div2</div>
+        <div>
+            <div>div안에 div1</div>
+        </div>
+
+        <!-- span 인라인 요소(컨텐츠만큼 공간 차지) -> 줄바꿈X -->
+        <span>span1</span>
+        <span>span2</span>
+        <p>안녕하세요 저는 <span>ㅇㅇㅇ</span>입니다</p>
+
+        <!-- ul, ol, li -->
+        <!-- ul 순서가 없는 목록-->
+        <!-- ol 순서가 있는 목록 1,A,a,I,i-->
+        <!-- li 리스트 -->
+        <ul>
+            <li>사과</li>
+            <li>오렌지</li>
+            <li>키위</li>
+            <li>딸기</li>
+        </ul>
+        <ol type="a" start="2" reversed>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+        </ol>
+        <!-- 중첩 사용 -->
+        <hr>
+        <ul>
+            <li>요소1</li>
+            <li>요소2</li>
+            <ol>
+                <li>요소2의 자식요소1</li>
+                <li>요소2의 자식요소2</li>
+            </ol>
+            <li>요소3</li>
+            <li>요소4</li>
+        </ul>
+    </body>
+</html>
