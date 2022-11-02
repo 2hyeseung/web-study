@@ -10,83 +10,38 @@
     <h1>실습26 GET</h1>
     <form action="/getForm26" name="ex26" method="get">
         <span>이름</span>
-        <input type="text" name="name">
+        <input type="text" name="name" required>
         <fieldset>
             <legend>성별</legend>
-            <input type="radio" value='남성' name="gender" id="male">남성
-            <input type="radio" value='여성' name="gender" id="female">여성
+            <input type="radio" value='남성' name="gender" id="male" required><label for="male">남성</label>
+            <input type="radio" value='여성' name="gender" id="female" required><label for="female">여성</label>
         </fieldset>
         <fieldset>
             <legend>생년월일</legend>
             <select name="birthyear" id="year">
-                <option value="2003">2003</option>                
-                <option value="2002">2002</option>                
-                <option value="2001">2001</option>                
-                <option value="2000">2000</option>                
-                <option value="1999">1999</option>                
-                <option value="1998">1998</option>                
-                <option value="1997">1997</option>                
-                <option value="1996">1996</option>                
-                <option value="1995">1995</option>                
-                <option value="1994">1994</option>                
-                <option value="1993">1993</option>                
-                <option value="1992">1992</option>                
-                <option value="1991">1991</option> 
-                <option value="1990">1990</option>
-            </select>년
+                <% for(let i=1990; i<2023;i++){ %>
+                <option value=<%=i%>><%=i%></option>
+                <%  }%>
+            </select>
+            <label for="year">년</label>
             <select name="birthmonth" id="month">
-                <option value="1">1</option>                
-                <option value="2">2</option>                
-                <option value="3">3</option>                
-                <option value="4">4</option>                
-                <option value="5">5</option>                
-                <option value="6">6</option>                
-                <option value="7">7</option>                
-                <option value="8">8</option>                
-                <option value="9">9</option>                
-                <option value="10">10</option>                
-                <option value="11">11</option>                
-                <option value="12">12</option>                
-            </select>월
+                <% for(let i=1; i<13;i++){ %>
+                    <option value=<%=i%>><%=i%></option>
+                <%  }%>               
+            </select>
+            <label for="month">월</label>
             <select name="birthdate" id="date">
-                <option value="1">1</option>                
-                <option value="2">2</option>                
-                <option value="3">3</option>                
-                <option value="4">4</option>                
-                <option value="5">5</option>                
-                <option value="6">6</option>                
-                <option value="7">7</option>                
-                <option value="8">8</option>                
-                <option value="9">9</option>                
-                <option value="10">10</option>                
-                <option value="11">11</option>                
-                <option value="12">12</option>                
-                <option value="13">13</option> 
-                <option value="14">14</option>
-                <option value="15">15</option>                
-                <option value="16">16</option>                
-                <option value="17">17</option>                
-                <option value="18">18</option>                
-                <option value="19">19</option>                
-                <option value="20">20</option>                
-                <option value="21">21</option>                
-                <option value="22">22</option>                
-                <option value="23">23</option>                
-                <option value="24">24</option>                
-                <option value="25">25</option>                
-                <option value="26">26</option>                
-                <option value="27">27</option> 
-                <option value="28">28</option>
-                <option value="29">29</option>                
-                <option value="30">30</option> 
-                <option value="31">31</option>
-            </select>일
+                <% for(let i=1; i<32;i++){ %>
+                    <option value=<%=i%>><%=i%></option>
+                <%  }%>
+            </select>
+            <label for="date">일</label>
         </fieldset>
         <fieldset>
             <legend>관심사</legend>
-            <input type="checkbox" name="like" value="여행">여행
-            <input type="checkbox" name="like" value="패션">패션
-            <input type="checkbox" name="like" value="음식">음식
+            <input type="checkbox" name="like" value="여행"><label for="여행">여행</label>
+            <input type="checkbox" name="like" value="패션"><label for="패션">패션</label>
+            <input type="checkbox" name="like" value="음식"><label for="음식">음식</label>
         </fieldset>
         <button type="submit">회원가입</button>
     </form>
