@@ -28,15 +28,15 @@
     <h1><%= title %></h1>
     <form name="register">
         <label for="name">이름</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" required>
         <br>성별
-        <input type="radio" name="gender" id="male" value="남자">
+        <input type="radio" name="gender" id="male" value="남자" required>
         <label for="male">남자</label>
-        <input type="radio" name="gender" id="female" value="여자">
+        <input type="radio" name="gender" id="female" value="여자" required>
         <label for="female">여자</label><br><br>
         <button type="button" onclick="ajaxGet()">ajax get 제출</button>
         <button type="button" onclick="ajaxPost()">ajax post 제출</button><br><br>
-        <button type="button" onclick="axiosGet()">axios get 제출</button>
+        <button type="button" onclick="axiosGet()">axios get 제출, 유효성검사</button>
         <button type="button" onclick="axiosPost()">axios post 제출</button><br><br>
         <button type="button" onclick="fetchGet()">fetch get 제출</button>
         <button type="button" onclick="fetchPost()">fetch post 제출</button>
@@ -99,6 +99,8 @@
     }
 
     // AXIOS - GET
+    // 사용자의 입력이 올바르지 않다면, axios 요청 시도 X
+    // 사용자의 입력이 올바르다면, axios 요청 시도
     function axiosGet(){
         console.log('######## click axiosGet ########');
         const form=document.forms['register'];
@@ -106,8 +108,15 @@
             name:form.name.value,
             gender:form.gender.value,
         };
+
+        //유효성검사
+        // console.log(form.name.checkValidity());
+        // console.log(form.gender[0].checkValidity());
+        // console.log(form.gender[1].checkValidity());
+
         // AXIOS 비동기 통신 - GET 요청
-        axios({
+        if(form.name.checkValidity() && form.gender[0].checkValidity()){
+            axios({
             method:'GET',
             url:'/axios',
             params:data,
@@ -118,6 +127,9 @@
             resultBox.textContent=`GET /axios 요청 완료!! ${response.data.name}님은 ${response.data.gender}이시죠?ㅎㅎ`;
             resultBox.style.color='green';
         })
+        }else{
+            resultBox.textContent=`입력안됨`;
+        }
     }
 
     // AXIOS - POST

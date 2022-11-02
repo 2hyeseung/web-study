@@ -55,11 +55,11 @@ app.post('/fetch',function(req,res){
 // 실습 29, 30
 // GET /axios
 app.get('/axios29',function(req,res){
-    console.log(req.query);
     res.send(req.query);
 })
 // POST /axios
-app.post('/axios30',function(req,res){  // 아이디 abc, 비번 123
+app.post('/axios30',function(req,res){  
+    // 아이디 abc, 비번 123
     if(req.body.id!='abc'){
         req.body.res='id-wrong'
     }else if(req.body.pw!='123'){
@@ -69,6 +69,10 @@ app.post('/axios30',function(req,res){  // 아이디 abc, 비번 123
     }
     res.send(req.body);
 })
+
+// res.send({userInfo:req.body, msg:'성공/실패'})
+// 실패면 userInfo 안보내기
+// 또는 msg 대신 isLogin True
 
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
