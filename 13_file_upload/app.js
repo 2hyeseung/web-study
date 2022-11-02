@@ -8,7 +8,7 @@ const path = require('path');
 const upload = multer({
   dest: 'uploads/',
 });
-const uploadDeatil = multer({
+const uploadDetail = multer({
   storage: multer.diskStorage({
     destination(req, file, done) {
       // req: 요청에 대한 정보
@@ -38,12 +38,16 @@ app.use(express.json());
 app.get('/', function (req, res) {
   res.render('index', { title: '파일 업로드를 배워보자!' });
 });
+app.get('/exercise31', function (req, res) {
+    res.render('exercise31', { title: '실습 31.' });
+  });
+
 
 // 1. single(): 하나의 파일 업로드할 때
 // single()의 인자: input 태그의 name 값
 // single() -> req.file 객체에 파일 정보
 app.post('/upload', upload.single('userfile'), function (req, res) {
-// app.post('/upload', uploadDeatil.single('userfile'), function (req, res) {
+// app.post('/upload', uploadDetail.single('userfile'), function (req, res) {
 
   // req.file: 파일 업로드 성공 결과 (파일 정보)
   //   {
@@ -64,6 +68,21 @@ app.post('/upload', upload.single('userfile'), function (req, res) {
 
   res.send('Uploads!');
 });
+
+// 2. array(): 여러 파일을 하나의 input에 업로드할 때
+// array() -> req.files 객체에 파일 정보
+app.post('/upload/array', uploadDetail.array('userfiles'),function(req, res){
+    console.log(req.files);
+    console.log(req.body);
+    res.send('Upload Multiple Each!!');
+})
+
+// 3. fields(): 여러 파일을 각각의 input에 업로드할 때
+app.post('/upload/fields', uploadDetail.fields([{name:'userfile1'},{name:'userfile2'}]), function(req,res){
+    console.log(req.files);
+    console.log(req.body);
+    res.send('Upload Multiple Each!!');
+})
 
 app.listen(PORT, function (req, res) {
   console.log(`http://localhost:${PORT}`);
