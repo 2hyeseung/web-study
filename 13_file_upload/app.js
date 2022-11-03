@@ -21,10 +21,15 @@ const uploadDetail = multer({
       // file: 파일에 대한 정보
       // done: 함수
       const ext = path.extname(file.originalname); // file.originalname에서 "확장자" 추출
-      done(null, path.basename(file.originalname, ext) + Date.now() + ext);
+    //   done(null, path.basename(file.originalname, ext) + Date.now() + ext);
       // [파일명+현재시간.확장자] 이름으로 바꿔서 파일 업로드
       // 현재시간: 파일명이 겹치는 것을 막기 위함
       // file.originalname,ext => 확장자 떼고 파일 이름만
+
+      // 아이디 + 현재시간.확장자
+      done(null, path.basename(file.originalname, ext) + Date.now() + ext);
+    //   done(null, req.body.id + Date.now() + ext);
+      
     },
   }),
   limits: { fileSize: 5 * 1024 * 1024 },
@@ -34,13 +39,14 @@ app.set('view engine', 'ejs');
 app.use('/views', express.static(__dirname + '/views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use('/uploads', express.static(__dirname + '/uploads'));  // upload폴더 접근
 
 app.get('/', function (req, res) {
   res.render('index', { title: '파일 업로드를 배워보자!' });
 });
 app.get('/exercise31', function (req, res) {
-    res.render('exercise31', { title: '실습 31.' });
-  });
+    res.render('exercise31',{ title: '실습31. 파일 업로드' });
+});
 
 
 // 1. single(): 하나의 파일 업로드할 때
@@ -83,6 +89,20 @@ app.post('/upload/fields', uploadDetail.fields([{name:'userfile1'},{name:'userfi
     console.log(req.body);
     res.send('Upload Multiple Each!!');
 })
+
+// 4. 동적 파일 업로드
+app.post('/dynamicFile', uploadDetail.single('dynamicFileName'), function(req,res){
+  // console.log(req)
+  res.send(req.file);
+})
+
+// 실습31
+app.post('/result', uploadDetail.single('userfile'), function (req, res) {
+      console.log(req.file);
+      console.log(req.body);
+      res.render('result',{userInfo:req.body,userImage:req.file})
+    });
+
 
 app.listen(PORT, function (req, res) {
   console.log(`http://localhost:${PORT}`);

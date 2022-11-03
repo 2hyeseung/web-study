@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11/2 실습 31</title>
+</head>
+<style>
+    body{
+        /* background-color: black;
+        padding-top:140px; */
+        background-color: #1d1d1d;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        /* background-color: white;
+        width: 300px;
+        height: 400px;
+        margin:auto;
+        border-style: none;
+        border-radius: 30px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column; */
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 30px 10px;
+        text-align: center;
+    }
+    img{
+        width:250px;
+        height:150px; 
+        align-items: center;
+    }
+    div{
+        padding-top:10px;
+    }
+    .id{
+        padding-top:30px;
+        font-weight: 700;
+    }
+    .pw{
+        padding-top:20px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <img src="<%= userImage.path %>">
+        <div class="id"><%= userInfo.id %>님 환영합니다!</div>
+        <div class="pw">비밀번호 : <%= userInfo.pw %></div>
+        <div class="name">이름 : <%= userInfo.name %></div>
+        <div class="age">나이 : <%= userInfo.age %></div>
+    </div>
+</body>
+</html>

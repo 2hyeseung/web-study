@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>11/2 실습 31</title>
+    <title><%= title %></title>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <body>
     <h1><%= title %></h1>
     <hr>
@@ -33,5 +34,35 @@
         <input type="text" name="title2"><br><br>
         <button type="submit">업로드</button><br>
     </form>
+    <hr>
+    <h2>동적 파일 업로드</h2>
+    <input type="file" name="dynamicFileName" id="dynamicFile"><br>
+    <button type="button" onclick="fileUpload()">업로드</button><br>
+    <img src="" width="200">
+
+    <script>
+        function fileUpload(){
+            const formData = new FormData();                        // 폼 객체 생성
+            const file = document.getElementById('dynamicFile');    // file input
+            console.dir(file);          // file input
+            console.dir(file.files[0]); // file input에 들어간 파일 정보
+            // input의 name과 input에 value
+            formData.append('dynamicFileName',file.files[0]);   
+            // axios 통신
+            axios({
+                method: 'POST',
+                url : '/dynamicFile',
+                data : formData,
+                headers: {
+                    'Content-Type' : 'multipart/form-data',
+                }
+            }).then(function(response){
+                console.log(response);
+                console.log(response.data);
+                console.log(response.data.path);
+                document.querySelector('img').src=response.data.path;
+            })
+        }
+    </script>
 </body>
 </html>

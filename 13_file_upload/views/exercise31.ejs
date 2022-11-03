@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11/2 실습 31</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<body>
+    <h1><%= title %></h1>
+    <br>
+    <form action="/result" method="POST" enctype="multipart/form-data">
+        <input type="text" name="id" placeholder="아이디"><br>
+        <input type="password" name="pw" placeholder="비밀번호"><br>
+        <input type="text" name="name" placeholder="이름"><br>
+        <input type="number" name="age" placeholder="나이"><br>
+        <input type="file" name="userfile"><br>
+        <button type="submit">회원가입</button>
+    </form>
+    <br>
+    <h1>동적 파일 업로드</h1>
+    <form name="upload">
+        <input type="text" name="id" placeholder="아이디"><br>
+        <input type="password" name="pw" placeholder="비밀번호"><br>
+        <input type="text" name="name" placeholder="이름"><br>
+        <input type="number" name="age" placeholder="나이"><br>
+        <input type="file" name="dynamicFileName" id="dynamicFile"><br>
+        <button type="button" onclick="fileUpload()">업로드</button><br>
+    </form>
+    <img src="" width="200">
+    <ul></ul>
+
+
+    <script>
+        function fileUpload(){
+            const formData = new FormData();                        // 폼 객체 생성
+            const file = document.getElementById('dynamicFile');    // file input
+            // console.dir(file);          // file input
+            // console.dir(file.files[0]); // file input에 들어간 파일 정보
+            // input의 name과 input에 value
+            formData.append('dynamicFileName',file.files[0]);   
+
+            // axios 통신
+            axios({
+                method: 'POST',
+                url : '/dynamicFile',
+                data : formData,
+                headers: {
+                    'Content-Type' : 'multipart/form-data',
+                }
+            }).then(function(response){
+                // console.log(response);
+                // console.log(response.data);
+                // console.log(response.data.path);
+                document.querySelector('img').src=response.data.path;
+
+                // let ul = document.querySelector('ul');
+
+                // let li = document.createElement('li');
+                // li.innerText = '오렌지'; 
+                // ul.append(li);
+            })
+        }
+    </script>
+</body>
+</html>
