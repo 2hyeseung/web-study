@@ -102,6 +102,11 @@ app.post('/result', uploadDetail.single('userfile'), function (req, res) {
       console.log(req.body);
       res.render('result',{userInfo:req.body,userImage:req.file})
     });
+app.post('/axios',function(req,res){
+      // console.log(req.body);
+      res.send(req.body);
+  })
+  
 
 
 app.listen(PORT, function (req, res) {
