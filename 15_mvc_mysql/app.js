@@ -12,11 +12,6 @@ app.use(express.json());
 const indexRouter = require('./routes');  // ./routes/index : index는 생략 가능 (default)
 app.use('/',indexRouter);   // localhost:PORT/ 경로를 기본으로 ./routes/index.js 파일에 선언한 대로 동작
 
-// ./routes/user.js
-const userRouter = require('./routes/user');
-// localhost:PORT/user 경로를 기본으로 ./routes/user.js 파일에 선언한 대로 동작
-app.use('/user', userRouter);
-
 // [404 Error]
 // 맨 마지막 라우트로 선언
 // 그렇지 않으면 나머지 코드 무시됨
