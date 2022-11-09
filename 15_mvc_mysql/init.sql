@@ -21,3 +21,7 @@ FLUSH PRIVILEGES;
 ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY '비밀번호';
 
 DELETE FROM visitor WHERE id>2;
+
+SELECT * FROM visitor WHERE id=1;
+
+UPDATE visitor SET name='누구' comment='아무말' WHERE id = 1;

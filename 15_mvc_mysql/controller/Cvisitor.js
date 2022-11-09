@@ -36,3 +36,22 @@ exports.deleteVisitor = (req,res) => {
         res.send('삭제 성공!!!');
     });
 }
+
+exports.getVisitor = (req,res) => {
+    // console.log(req.query);     // {id:'1'}
+    // console.log(req.query.id);  // '1'
+    
+    Visitor.getVisitor(req.query.id, (result) => {
+        // console.log('Cvisitor.js : ',result);
+        res.send(result);
+    })
+}
+
+exports.patchVisitor = (req,res) => {
+    // console.log('Cvisitor : ',req.body);
+
+    Visitor.patchVisitor(req.body,(result)=>{
+        // console.log('Cvisitor.js : ',result);   // cb(true)값
+        res.send('수정 성공!!!');
+    })
+}

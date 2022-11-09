@@ -14,4 +14,10 @@ router.post('/visitor/write',controller.postVisitor);
 // POST /visitor/delete => localhost:PORT/visitor/delete  // 하나 삭제
 router.delete('/visitor/delete',controller.deleteVisitor);
 
+// POST /visitor/get => localhost:PORT/visitor/get  // 하나 조회
+router.get('/visitor/get',controller.getVisitor);
+
+// PATCH /visitor/edit => localhost:PORT/visitor/edit  // 하나 수정
+router.patch('/visitor/edit',controller.patchVisitor);
+
 module.exports = router;
