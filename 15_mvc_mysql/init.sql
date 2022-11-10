@@ -25,3 +25,13 @@ DELETE FROM visitor WHERE id>2;
 SELECT * FROM visitor WHERE id=1;
 
 UPDATE visitor SET name='누구' comment='아무말' WHERE id = 1;
+
+
+CREATE TABLE user(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    userid VARCHAR(20) NOT NULL,
+    name VARCHAR(10) NOT NULL,
+    pw VARCHAR(20) NOT NULL
+);
+
+INSERT INTO user (userid, name, pw) VALUES ('user1','유저1','1234');
