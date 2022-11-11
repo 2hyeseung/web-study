@@ -16,18 +16,17 @@ exports.postSignup = (data, cb) => {
         if (err) {
           throw err;
         }
-        console.log('### User.js - postSignup : ',rows);
+        // console.log('### User.js - postSignup : ',rows);
         cb(rows);
       });
   };
 
 exports.postSignin = (data, cb) => {
-    // console.log("data : ", data.userid);
     conn.query(`SELECT * FROM user WHERE userid='${data.userid}' AND pw='${data.pw}'`, (err, rows) => {
     if (err) {
       throw err;
     }
-    console.log('### User.js - postSignin : ', rows[0]);
+    // console.log('### User.js - postSignin : ', rows[0]);
     cb(rows[0]);
   })
 }
@@ -37,7 +36,7 @@ exports.postProfile = (data,cb) => {
         if (err) {
           throw err;
         }
-        console.log('### User.js - postProfile : ',rows[0]);
+        // console.log('### User.js - postProfile : ',rows[0]);
         cb(rows[0]);
       })
 }
