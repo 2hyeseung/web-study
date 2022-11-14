@@ -1,23 +1,30 @@
 const express = require('express');
 const controller = require('../controller/Cvisitor');
+const user_controller = require('../controller/Cuser');
 const router = express.Router();
 
 // GET / => localhost:PORT/ // 메인
 router.get('/', controller.main);
 
-// GET /visitor => localhost:PORT/visitor   // 전체 조회
+// Sequelize 수업
 router.get('/visitor', controller.visitor);
-
-// POST /visitor/write => localhost:PORT/visitor/write  // 하나 추가
 router.post('/visitor/write',controller.postVisitor);
-
-// POST /visitor/delete => localhost:PORT/visitor/delete  // 하나 삭제
 router.delete('/visitor/delete',controller.deleteVisitor);
-
-// POST /visitor/get => localhost:PORT/visitor/get  // 하나 조회
 router.get('/visitor/get',controller.getVisitor);
-
-// PATCH /visitor/edit => localhost:PORT/visitor/edit  // 하나 수정
 router.patch('/visitor/edit',controller.patchVisitor);
+
+// 실습 39
+// router.get('/user', controller.main);
+
+router.get('/user/signin', user_controller.signin);
+router.get('/user/signup', user_controller.signup);
+
+router.post('/user/signin', user_controller.postSignin);
+router.post('/user/signup', user_controller.postSignup);
+
+router.post('/user/profile',user_controller.postProfile);
+router.post('/user/profile/edit',user_controller.patchProfile);
+router.post('/user/profile/delete',user_controller.deleteProfile);
+
 
 module.exports = router;

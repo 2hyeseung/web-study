@@ -35,9 +35,9 @@ exports.postVisitor = (req,res) => {
         name : req.body.name,
         comment : req.body.comment,
     }).then(result => {
-        console.log("## controller > Cvisitor.js - postVisitor : ",result)
+        console.log("## controller > Cvisitor.js - postVisitor : ",result.id)
         res.send({
-            id:result,     
+            id:result.id,     
             name:req.body.name, 
             comment:req.body.comment,
         });

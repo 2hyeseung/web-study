@@ -16,6 +16,7 @@ db.Sequelize = Sequelize;
 // models/Visitor.js 정의한 model이 db.Visitor에 들어감
 // db = { sequelize:sequelize, Sequelize:Sequelize, Visitor:__ }
 db.Visitor = require('./Visitor')(sequelize,Sequelize);
+db.User = require('./User')(sequelize,Sequelize);
 
 // db 변수 내보냄 -> 다른 파일에서 사용
 module.exports = db;
