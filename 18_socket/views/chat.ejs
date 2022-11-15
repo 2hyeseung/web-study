@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>11/15 socket 실습</title>
+    <script src="https://cdn.socket.io/4.5.3/socket.io.min.js"
+        integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/chat.css">
 </head>
+
 <body>
-    <h1>실습42. Socket 연습</h1>
+    <h1>Socket.io</h1>
+    <hr><h2>실습 42. Socket 연습</h2>
+    <button onclick="sayHello()">hello</button>
+    <button onclick="sayStudy()">study</button>
+    <button onclick="sayBye()">bye</button>
+    <p id="from-server"></p><hr>
+
+    <h2>실습 43~46. 채팅방 만들기</h2>
+    <!-- [실습 44-2] 채팅창 입장 안내 문구 (소켓아이디 -> 닉네임) -->
+    <div class="nickname-container">
+        <input type="text" id="nickname" placeholder="닉네임으로 입장하세요." autofocus onkeyup="enterkey_entry()">
+        <button type="button" onclick="entry()">입장</button>
+    </div>
+    <div class="wrap d-none">
+        <!-- [실습43] 임시 데이터 -->
+        <!-- <div class="notice">xx가 입장했습니다.</div>
+        <div class="chat left">
+            <div class="textbox">user1 : msg1</div>
+        </div>
+        <div class="chat right">
+            <div class="textbox">user2 : msg2</div>
+        </div> -->
+    </div>
+    <div class="input-container d-none">
+        <select name="to" id="to"></select>에게
+        <input type="text" id="message" onkeyup="enterkey_send()">
+        <button type="button" onclick="send()">전송</button>
+    </div>
+    <br><br><br>
+
+    <script src="/static/js/chat.js"></script>
 </body>
+
 </html>
+
