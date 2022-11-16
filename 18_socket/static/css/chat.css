@@ -112,3 +112,31 @@ a {
 .d-none{
     display: none;
 }
+
+
+
+.wrap .dm-left .textbox {
+    margin-left: 10px;
+    background-color: #d38aa1;
+}
+
+.wrap .dm-left .textbox::before {
+    left: -10px;
+    content: "◀";
+    color: #d38aa1;
+}
+
+.wrap .dm-right {
+    flex-direction: row-reverse;
+}
+
+.wrap .dm-right .textbox {
+    margin-right: 10px;
+    background-color: #d38aa1;
+}
+
+.wrap .dm-right .textbox::before {
+    right: -10px;
+    content: "▶";
+    color: #d38aa1;
+}
