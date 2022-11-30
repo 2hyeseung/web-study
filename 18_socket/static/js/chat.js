@@ -44,9 +44,14 @@ function sayBye() {
 // notice 이벤트를 받아서 공지 문구를 출력
 socket.on('notice', (msg) => {
     // console.log('socket on notice >> ', msg);
-    document
+    // document
+    //     .querySelector('.wrap')
+    //     .insertAdjacentHTML('beforeend', `<div class="notice">${msg}</div>`);
+    if(myNick){
+        document
         .querySelector('.wrap')
         .insertAdjacentHTML('beforeend', `<div class="notice">${msg}</div>`);
+    }
 });
 // [실습 44-2] 채팅창 입장 안내 문구 (소켓아이디 -> 닉네임)
 function entry() {
@@ -85,19 +90,30 @@ socket.on('newMessage', (data) => {
     //     document.querySelector('.wrap').insertAdjacentHTML('beforeend', `<div class="chat left"><div class='textbox'>${data.nick} : ${data.msg}</div></div>`);
     // }
 
+    
+
     if(data.dm){
         if (data.nick === myNick) {
-            document.querySelector('.wrap').insertAdjacentHTML('beforeend', `<div class="chat dm-right"><div class='textbox'>${data.nick} : ${data.dm}${data.msg}</div></div>`);
+            document.querySelector('.wrap').insertAdjacentHTML('beforeend', 
+            `<div class="chat dm-right"><div class='textbox'>${data.nick} : ${data.dm}${data.msg}</div></div>
+            <div class="chat dm-right"><div class='date'>${data.date}</div></div>`);
         } else {
-            document.querySelector('.wrap').insertAdjacentHTML('beforeend', `<div class="chat dm-left"><div class='textbox'>${data.nick} : ${data.msg}</div></div>`);
+            document.querySelector('.wrap').insertAdjacentHTML('beforeend', 
+            `<div class="chat dm-left"><div class='textbox'>${data.nick} : ${data.msg}</div></div>
+            <div class="chat dm-left"><div class='date'>${data.date}</div></div>`);
         }
     }else{
         if (data.nick === myNick) {
-            document.querySelector('.wrap').insertAdjacentHTML('beforeend', `<div class="chat right"><div class='textbox'>${data.nick} : ${data.msg}</div></div>`);
+            document.querySelector('.wrap').insertAdjacentHTML('beforeend', 
+                `<div class="chat right"><div class='textbox'>${data.nick} : ${data.msg}</div></div>
+                <div class="chat right"><div class='date'>${data.date}</div></div>`);
         } else {
-            document.querySelector('.wrap').insertAdjacentHTML('beforeend', `<div class="chat left"><div class='textbox'>${data.nick} : ${data.msg}</div></div>`);
+            document.querySelector('.wrap').insertAdjacentHTML('beforeend', 
+            `<div class="chat left"><div class='textbox'>${data.nick} : ${data.msg}</div></div>
+            <div class="chat left"><div class='date'>${data.date}</div></div>`);
         }
     }
+
 
     // [실습 46] DM
 })
@@ -116,11 +132,16 @@ function enterkey_send() {
 // [실습46] DM 기능 추가
 socket.on('updateNicks', (nickArray) => {
     select = document.querySelector('select');
+    let online=0
     let options = '<option value="all">전체</option>';
     for (const socketId in nickArray) {
         if(nickArray[socketId]!==myNick){
             options+=`<option value="${socketId}">${nickArray[socketId]}</option>`;
         }
+        online+=1
     }
     select.innerHTML=options;
+    
+    document.querySelector('#online').innerHTML=`<div class="online">${online}명</div>`;
+    console.log(document.querySelector('#online'));
 });

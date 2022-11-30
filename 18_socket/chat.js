@@ -59,8 +59,8 @@ io.on('connection', (socket) => {
         } else{ 
             nickArray[socket.id] = nick;
             // console.log('접속 유저 목록 >> ',nickArray);
-            io.emit('notice', `${nick}님이 입장하셨습니다.`);
             socket.emit('entrySuccess', nick);
+            io.emit('notice', `${nick}님이 입장하셨습니다.`);
             updateList();
         }
     })
@@ -77,12 +77,14 @@ io.on('connection', (socket) => {
 
     // [실습 45] 채팅창 메시지 전송
     socket.on('send', (data) => {
+        let now = new Date();
+        date = now.getMonth()+"월"+now.getDate()+"일 "+now.getHours()+":"+now.getMinutes()
         if(data.dm!=='all'){    // dm
-            const sendData = { nick:data.nick, msg:data.msg, dm:'(속닥속닥) ' };
+            const sendData = { nick:data.nick, msg:data.msg, dm:'(속닥속닥) ',date:date};
             io.to(data.dm).emit('newMessage', sendData);
             socket.emit('newMessage',sendData);
         }else{                  // 전체
-            const sendData = { nick:data.nick, msg:data.msg};
+            const sendData = { nick:data.nick, msg:data.msg, date:date};
             io.emit('newMessage', sendData);
         }
     })

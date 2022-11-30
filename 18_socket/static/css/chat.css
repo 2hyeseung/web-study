@@ -23,7 +23,7 @@ a {
 .wrap .chat {
     display: flex;
     align-items: flex-start;
-    padding: 10px;
+    padding: 2px 10px 2px 10px
 }
 
 .wrap .chat .textbox {
@@ -139,4 +139,12 @@ a {
     right: -10px;
     content: "▶";
     color: #d38aa1;
+}
+
+
+.date{
+    font-size : 10px;
+    color:dimgray;
+    margin-right: 10px;
+    margin-left : 10px;
 }
