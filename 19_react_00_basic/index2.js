@@ -46,3 +46,8 @@ console.log(minji);
 console.log(minji.study());
 console.log(minkyu);
 console.log(minkyu.study());
+
+
+
+// 캡슐화
+// 데이터와 데이터를 처리하는
