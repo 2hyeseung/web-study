@@ -1,0 +1,47 @@
+.Food{
+    padding : 20px;
+}
+
+.Food b{
+    color:red;
+}
+
+
+.Book{
+    width:500px;
+    height :550px;
+    background: rgb(249, 230, 151);
+}
+
+.Content{
+    text-align: left;
+}
+
+.BestSeller{
+    padding-top:30px;
+    color:orange;
+    font-weight: 700;
+    font-size:40px;
+}
+
+.Book img{
+    padding-top:30px;
+}
+
+.Book .Title{
+    padding-top:30px;
+    font-weight: 700;
+    font-size:25px;
+}
+
+.Book .Content{
+    padding-top:30px;
+    font-weight: 700;
+    padding-left:64px;
+}
+
+.Text{
+    padding-top:30px;
+    font-weight: 700;
+    font-size: 30px;
+}
