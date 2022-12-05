@@ -1,0 +1,119 @@
+:root {
+    --height-header: 80px;
+    --color-blue: rgb(119, 164, 255);
+    --color-white: rgb(255, 255, 255);
+    --color-gray: rgb(123, 123, 123);
+    --color-lightblue: rgb(243, 247, 255);
+    --shadow-black: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.PostList header {
+    height: var(--height-header);
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px var(--shadow-black);
+    line-height: var(--height-header);
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.PostItem {
+    width: 50%;
+    background-color: var(--color-lightblue);
+    margin: 40px auto;
+    box-shadow: 4px 4px 10px var(--shadow-black);
+    border-radius: 10px;
+    padding: 20px 30px;
+    /* padding : 위아래, 좌우 */
+    text-align: left;
+}
+
+.PostItem .id {
+    font-weight: 500;
+    margin-right: 8px;
+    color: var(--color-blue);
+}
+
+.PostItem .title {
+    color: var(--color-gray);
+}
+
+.PostItem .body {
+    font-size: 20px;
+}
+
+.PostItem:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+    transition: transform 0.4s;
+}
+
+.PostItem:hover .id,
+.PostIten:hover .title {
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .PostItem {
+        width: 90vw;
+    }
+}
+
+/* 내 코드 */
+
+/* Header {
+    background-color: cornflowerblue;
+    color: white;
+    height: 60px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 60px;
+    font-size: 25px;
+}
+
+body {
+    align-items: center;
+}
+
+.PostItem {
+    padding: 30px;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: rgb(228, 234, 246);
+    width: 50vw;
+    border-style: none;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.PostItem:hover {
+    transform: translateY(-10px);
+}
+
+.id {
+    color: cornflowerblue;
+}
+
+.title {
+    color: gray;
+}
+
+.Loading {
+    margin-top: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+}
+
+@media (max-width: 700px) {
+    .PostItem {
+        width: 75vw;
+    }
+} */
