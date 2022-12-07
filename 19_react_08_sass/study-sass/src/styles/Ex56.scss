@@ -1,0 +1,49 @@
+@import "./utils.scss";
+.one,
+.two,
+.three,
+.four,
+.five {
+    @include circle(100px);
+}
+
+.grass {
+    @include absolute(300px, 200px, 150px);
+}
+
+.one {
+    background-color: $color-red;
+    @include relative(20px, 40px);
+}
+
+.two {
+    background-color: $color-orange;
+    @include relative(-10px, 80px);
+}
+
+.three {
+    background-color: $color-yellow;
+    @include relative(-90px, 150px);
+}
+
+.four {
+    background-color: $color-green;
+    @include relative(-220px, 220px);
+}
+
+.five {
+    background-color: $color-blue;
+    @include relative(-300px, 280px);
+}
+
+.six {
+    @include circle(30px);
+    background-color: $color-white;
+    @include relative(-470px, 60px);
+}
+
+.seven {
+    @include circle(15px);
+    background-color: $color-black;
+    @include relative(-495px, 64px);
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./PostList.css";
+import "./PostList.scss";
 import PostItem from "./PostItem";
 import Axios from "axios";
 

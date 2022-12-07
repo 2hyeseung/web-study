@@ -1,0 +1,27 @@
+//color
+$color-blue: rgb(119, 164, 255);
+$color-white: rgb(255, 255, 255);
+$color-gray: rgb(123, 123, 123);
+$color-lightblue: rgb(243, 247, 255);
+$shadow-black: rgba(0, 0, 0, 0.15);
+$color-black: black;
+
+$height-header: 80px;
+$breakpoint-md: 768px;
+
+@mixin font($font-size, $font-weight, $color) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+}
+
+@mixin translateY($sec, $y) {
+    transform: translateY($y);
+    transition: transform $sec;
+}
+
+@mixin div($w, $h, $bg-c) {
+    width: $w;
+    height: $h;
+    background-color: $bg-c;
+}

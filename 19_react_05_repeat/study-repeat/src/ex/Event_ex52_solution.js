@@ -3,29 +3,36 @@ import { useState } from "react";
 const Prob52 = () => {
     const [inputWriter, setInputWriter] = useState("");
     const [inputTitle, setInputTitle] = useState("");
-    // comment list state
+    const [inputSearch, setInputSearch] = useState("");
+    const [selectSearch, setSelectSearch] = useState("title");
+    const [searchComments, setSearchComments] = useState([]);
     const [comments, setComments] = useState([
         { writer: "민수", title: "안뇽" },
         { writer: "지민", title: "하이하이" },
         { writer: "희수", title: "멋쟁이" },
-        // + newComment
     ]);
 
     const addComment = () => {
-        // 1. comments state에 추가할 원소 만들기
-        // { writer: xxx, title: xxx }
         let newComment = { writer: inputWriter, title: inputTitle };
-        console.log(newComment);
-
-        // 2. 원소를 comments state에 추가하기 = state 변경
-        // ...comments: 기존 state 배열의 모든 원소
-        // newComment: 새로 추가될 state 배열의 원소
-        // [...comments, newComment]: 변경된 state 배열
         setComments([...comments, newComment]);
-
-        // 3. input 초기화
         setInputWriter("");
         setInputTitle("");
+    };
+
+    const search = () => {
+        let result = [];
+        {
+            inputSearch.trim().length >= 1 &&
+                (selectSearch === "writer"
+                    ? (result = comments.filter((comment) =>
+                          comment.writer.includes(inputSearch)
+                      ))
+                    : (result = comments.filter((comment) =>
+                          comment.title.includes(inputSearch)
+                      )));
+        }
+        setSearchComments(result);
+        setInputSearch("");
     };
 
     return (
@@ -50,6 +57,28 @@ const Prob52 = () => {
                 </button>
             </form>
 
+            <form name="search-form">
+                <label htmlFor="search">검색</label>
+                <select
+                    name="search"
+                    id="search"
+                    onChange={(e) => setSelectSearch(e.target.value)}
+                >
+                    <option value="title">제목</option>
+                    <option value="writer">작성자</option>
+                </select>
+                <input
+                    type="text"
+                    id="inputSearch"
+                    value={inputSearch}
+                    placeholder="검색"
+                    onChange={(e) => setInputSearch(e.target.value)}
+                />
+                <button type="button" onClick={search}>
+                    검색
+                </button>
+            </form>
+            <div>전체 댓글</div>
             <table border={1} style={{ margin: "30px auto", width: "500px" }}>
                 <thead>
                     <tr>
@@ -60,7 +89,6 @@ const Prob52 = () => {
                 </thead>
                 <tbody>
                     {comments.map((c, idx) => {
-                        // c = { writer: xxx, title: xxx }
                         return (
                             <tr key={idx + 1}>
                                 <td>{idx + 1}</td>
@@ -71,6 +99,37 @@ const Prob52 = () => {
                     })}
                 </tbody>
             </table>
+
+            <div>댓글 검색 결과</div>
+            {searchComments.length !== 0 ? (
+                <table
+                    border={1}
+                    style={{ margin: "30px auto", width: "500px" }}
+                >
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {searchComments.map((c, idx) => {
+                            return (
+                                <tr key={idx + 1}>
+                                    <td>{idx + 1}</td>
+                                    <td>{c.title}</td>
+                                    <td>{c.writer}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            ) : (
+                <div>
+                    <br></br>검색 결과가 없습니다.
+                </div>
+            )}
         </>
     );
 };

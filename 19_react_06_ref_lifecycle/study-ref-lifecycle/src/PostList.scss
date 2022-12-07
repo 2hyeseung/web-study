@@ -1,0 +1,50 @@
+@import "./utils.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+.PostList header {
+    font-size: 28px;
+    font-weight: 700;
+    height: $height-header;
+    background-color: $color-blue;
+    color: $color-white;
+    text-shadow: 2px 2px 4px $shadow-black;
+    line-height: $height-header;
+    text-align: center;
+}
+
+.PostItem {
+    width: 50%;
+    background-color: $color-lightblue;
+    margin: 40px auto;
+    box-shadow: 4px 4px 10px $shadow-black;
+    border-radius: 10px;
+    padding: 20px 30px;
+    text-align: left;
+    & .id {
+        font-weight: 700;
+        color: $color-blue;
+    }
+    & .title {
+        color: $color-gray;
+    }
+    & .body {
+        font-size: 20px;
+    }
+    &:hover {
+        cursor: pointer;
+        @include translateY(0.4s, -10px);
+        &:hover.id,
+        &:hover.title {
+            font-weight: 700;
+        }
+    }
+}
+
+@media (max-width: #{$breakpoint-md}) {
+    .PostItem {
+        width: 90vw;
+    }
+}

@@ -1,0 +1,17 @@
+@import "./utils.scss";
+
+.circle {
+    @include circle(100px);
+}
+.pink {
+    background-color: $color-pink;
+    @include animation(move1, 2s, ease-in-out, 5);
+}
+.yellow {
+    background-color: $color-yellow;
+    @include animation(move2, 2s, ease-in-out, 5);
+}
+.green {
+    background-color: $color-green;
+    @include animation(move3, 2s, ease-in-out, 5);
+}
